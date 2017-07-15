@@ -22,8 +22,8 @@ export default class FoodBrowser extends Component {
             <SegmentedControlButton value='Lugares' text='Lugares' />
         </Switcher>
         <FoodList></FoodList>
-        <Button></Button>
-        <Button></Button>
+        <Button>Mapa</Button>
+        <Button>Filtros</Button>
       </View>
     );
   }

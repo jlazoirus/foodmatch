@@ -70,7 +70,7 @@ cocinero.</Text>
 const styles = StyleSheet.create({
     container: {
         flex:10,
-        backgroundColor: '#71c671',
+        backgroundColor: '#fff',
         flexDirection: 'column',
         justifyContent: 'flex-start',
     },
