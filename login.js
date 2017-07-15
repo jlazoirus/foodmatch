@@ -32,6 +32,7 @@ export default class LogIn extends Component {
     createUserbuttonText= {
         color: '#627AAD',
     };
+    
     return (
       <View style={styles.container}>
         <TouchableHighlight style={styles.linkButtonConteiner} onPress={()=>navigate('Browse')}>
@@ -67,6 +68,9 @@ cocinero.</Text>
     );
   }
 }
+
+
+
 const styles = StyleSheet.create({
     container: {
         flex:10,

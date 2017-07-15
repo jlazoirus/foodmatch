@@ -7,9 +7,8 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import LogIn from './login';
-import FoodBrowser from './foodBrowser';
-
+import LogIn from './components/Login.js';
+import FoodBrowser from './components/FoodBrowser.js';
 
 const AwesomeProject = StackNavigator({
     Home: { screen: LogIn },
