@@ -13,13 +13,16 @@ import {
 } from 'react-native';
 
 import { StackNavigator } from 'react-navigation';
-import LogIn from './components/Login.js';
-import FoodBrowser from './components/FoodBrowser.js';
+import LogIn from './Containers/Login.js';
+import FoodBrowser from './Containers/FoodBrowser.js';
+import FoodDetail from './Containers/FoodDetail.js';
 
 
 const AwesomeProject = StackNavigator({
     Home: { screen: LogIn },
     Browse: {screen: FoodBrowser},
+    Food: {screen: FoodDetail},
+   
 },{ 
     headerMode: 'none' 
   });

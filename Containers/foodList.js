@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, ScrollView, ListView} from 'react-native';
-import { Button, Carousel } from 'nachos-ui';
-import { FoodItem } from './foodItem';
+import { Button, Carousel, Card, H4 } from 'nachos-ui';
+import FoodItem  from '../components/foodItem';
+import CardFood from '../components/CardFood.js';
 
 export default class FoodList extends Component {
   constructor(props) {
@@ -13,15 +14,16 @@ export default class FoodList extends Component {
       ])
     };
   }
+
+
   
   render() {
+    
     return (
-      <ScrollView >
-          <ListView
-            dataSource={this.state.dataSource}
-            renderRow={(rowData) => <Text data={rowData}></Text>}
-          />
-      </ScrollView>
+      <ScrollView>
+        <CardFood onItemPress={this.props.onItemPress} />
+        <CardFood onpress={this.onpress} />
+    </ScrollView>
     );
   }
 }

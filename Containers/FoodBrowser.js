@@ -2,29 +2,48 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, ScrollView, ListView } from 'react-native';
 import { Switcher, SegmentedControlButton, Input, Button } from 'nachos-ui';
 import FoodList from './foodList';
+ import styled from 'styled-components/native'
+
+
+const Container = styled.View`
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Footer = styled.View`
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+`; 
 
 export default class FoodBrowser extends Component {
     static navigationOptions = {
         header: {
-            visible: false,
+            visible: true,
         }
     };
+
+    onItemPress = () => {
+        this.props.navigation.navigate('Food')
+    }
+
     render() {
         return (
-            <View style={styles.container}>
-                <Input
-                    placeholder='Buscar'
-                />
-                <Switcher
-                    direction='row'
-                >
+            <Container>
+                <Input placeholder='Buscar' />
+                <Switcher direction='row' >
                     <SegmentedControlButton value='Domicilio' text='A Domicilio' />
                     <SegmentedControlButton value='Lugares' text='Lugares' />
                 </Switcher>
-                <FoodList></FoodList>
-                <Button>Mapa</Button>
-                <Button>Filtros</Button>
-            </View>
+                <ScrollView>
+                    <FoodList onItemPress={this.onItemPress}/>
+                    <Footer>
+                        <Button>Mapa</Button>
+                        <Button>Filtros</Button>
+                    </Footer>
+                </ScrollView>
+            </Container>
         );
     }
 }
